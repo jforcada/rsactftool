@@ -7,5 +7,7 @@ RUN git clone https://github.com/Ganapati/RsaCtfTool.git
 WORKDIR /RsaCtfTool
 RUN pip install -r "requirements.txt"
 RUN pip install -r "optional-requirements.txt"
-ENTRYPOINT ["./RsaCtfTool.py"]
-LABEL authors="icon @callrbx"
+RUN mkdir /data
+WORKDIR /data
+CMD ["/RsaCtfTool/RsaCtfTool.py"]
+LABEL authors="icon @callrbx @jforcada"
